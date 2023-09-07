@@ -3,6 +3,7 @@ import ClearComponent from './Components/ClearComponent';
 import Fragment from './Components/Fragment';
 import ComponentState from './Components/ComponentState';
 import ComponentProp from './Components/ComponentProp';
+import ParentStateChangeByChild from './Components/ParentStateChangeByChild';
 
 function App() {
   return (
@@ -14,6 +15,9 @@ function App() {
       </div>
       <div>
         <ComponentProp name="Ляляля" />
+      </div>
+      <div>
+        <ParentStateChangeByChild />
       </div>
     </div>
   );
