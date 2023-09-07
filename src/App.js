@@ -1,24 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import ClearComponent from './Components/ClearComponent';
+import Fragment from './Components/Frafment';
+import ComponentState from './Components/ComponentState';
+import ComponentProp from './Components/ComponentProp';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Hello from react!</h1>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React!!!!
-        </a>
-      </header>
+      <ClearComponent />
+      <Fragment />
+      <div>
+        <ComponentState />
+      </div>
+      <div>
+        <ComponentProp name="Ляляля" />
+      </div>
     </div>
   );
 }
