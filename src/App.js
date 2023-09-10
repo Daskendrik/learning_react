@@ -4,6 +4,7 @@ import Fragment from './Components/Fragment';
 import ComponentState from './Components/ComponentState';
 import ComponentProp from './Components/ComponentProp';
 import ParentStateChangeByChild from './Components/ParentStateChangeByChild';
+import Fetch from './Components/Fetch';
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
       </div>
       <div>
         <ParentStateChangeByChild />
+      </div>
+      <div>
+        <Fetch />
       </div>
     </div>
   );
