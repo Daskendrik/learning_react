@@ -4,16 +4,17 @@ import TodoForm from './Components/Todos/TodoForm';
 import TodoList from './Components/Todos/TodoList';
 
 function App() {
-  const [TodoArray, SetTodoArray] = useState('');
+  const [Todo, SetTodo] = useState('');
 
   const addTodo = (value) => {
-    SetTodoArray(TodoArray.push(value));
+    SetTodo(value);
+    console.log('sad');
   };
   return (
     <div className="App">
       <h1>Todo App</h1>
-      <TodoForm onclick={addTodo} />
-      <TodoList TodoArray={TodoArray} />
+      <TodoForm onClick={addTodo} />
+      <TodoList TodoArray={Todo} />
     </div>
   );
 }

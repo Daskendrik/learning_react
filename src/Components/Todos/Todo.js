@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import style from './Todo.module.css';
 
 const Todo = (props) => {
-  const { value } = props;
+  const [value, setValue] = useState('');
+  //   setValue(props.value);
   return (
     <>
       <div className={style.todo}>

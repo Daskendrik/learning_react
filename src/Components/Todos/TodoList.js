@@ -1,10 +1,13 @@
+import { useState } from 'react';
 import Todo from './Todo';
 
-const TodoList = () => {
+const TodoList = (props) => {
+  const { value } = props;
+  //   const [arrayTodoArray, setarrayTodoArray] = useState(null);
+
   return (
     <div>
-      <Todo />
-      <Todo />
+      <Todo value={value} />
     </div>
   );
 };
