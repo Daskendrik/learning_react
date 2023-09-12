@@ -1,8 +1,10 @@
+import Todo from './Todo';
+
 const TodoList = () => {
   return (
     <div>
-      <img alt="#"></img>
-      <p>todo something</p>
+      <Todo />
+      <Todo />
     </div>
   );
 };

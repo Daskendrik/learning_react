@@ -2,14 +2,16 @@ import style from './TodoForm.module.css';
 
 const TodoForm = () => {
   return (
-    <div className={style.form}>
+    <form className={style.form}>
       <input
         className={style.input}
         type="text"
         placeholder={'Enter new todo'}
       ></input>
-      <button className={style.button}>Submit</button>
-    </div>
+      <button type="submit" className={style.button}>
+        Submit
+      </button>
+    </form>
   );
 };
 

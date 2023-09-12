@@ -1,15 +1,12 @@
-import TodoForm from './TodoForm';
 import style from './Todo.module.css';
-import TodoList from './TodoList';
 
-const Todo = () => {
+const Todo = (props) => {
+  const { value } = props;
   return (
     <>
       <div className={style.todo}>
-        <h2 className={style.todoText}>Todo App</h2>
+        <h2 className={style.todoText}>{value} To do!</h2>
       </div>
-      <TodoForm />
-      <TodoList />
     </>
   );
 };
