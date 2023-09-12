@@ -1,15 +1,10 @@
-import { useState } from 'react';
 import Todo from './Todo';
 
 const TodoList = (props) => {
-  const { value } = props;
+  const { todos } = props;
   //   const [arrayTodoArray, setarrayTodoArray] = useState(null);
 
-  return (
-    <div>
-      <Todo value={value} />
-    </div>
-  );
+  return todos.map((todo, index) => <Todo key={index} todo={todo} />);
 };
 
 export default TodoList;

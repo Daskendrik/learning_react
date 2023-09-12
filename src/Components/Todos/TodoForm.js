@@ -1,21 +1,27 @@
+import { useState } from 'react';
 import style from './TodoForm.module.css';
 
 const TodoForm = (props) => {
-  const { onClick } = props;
+  const { addTodo } = props;
 
-  const addTodo = () => {
-    const value = document.getElementById('input').value;
-    onClick(value);
+  const [text, setText] = useState('');
+  const onSubmitHandler = (event) => {
+    event.preventDefault();
+    addTodo(text);
+    setText('');
   };
+
   return (
-    <form className={style.form}>
+    <form className={style.form} onSubmit={onSubmitHandler}>
       <input
         className={style.input}
         type="text"
         placeholder={'Enter new todo'}
         id="input"
+        value={text}
+        onChange={(e) => setText(e.target.value)}
       ></input>
-      <button type="submit" className={style.button} onClick={addTodo}>
+      <button type="submit" className={style.button}>
         Submit
       </button>
     </form>
