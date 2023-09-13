@@ -2,7 +2,7 @@ import Todo from './Todo';
 import styles from './TodoList.module.css';
 
 const TodoList = (props) => {
-  const { todos } = props;
+  const { todos, deleteTodo } = props;
   //   const [arrayTodoArray, setarrayTodoArray] = useState(null);
   console.log(todos);
 
@@ -11,7 +11,9 @@ const TodoList = (props) => {
       {!todos.length ? (
         <h2>Todo list empty</h2>
       ) : (
-        todos.map((todo, index) => <Todo key={index} todo={todo} />)
+        todos.map((todo, index) => (
+          <Todo key={index} todo={todo} deleteTodo={deleteTodo} index={index} />
+        ))
       )}
     </div>
   );
