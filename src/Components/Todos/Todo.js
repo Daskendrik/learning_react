@@ -6,7 +6,11 @@ const Todo = (props) => {
   const { todo, deleteTodo, changeTodo } = props;
   return (
     <>
-      <div className={styles.todo}>
+      <div
+        className={`${styles.todo} ${
+          todo.isCompleted ? styles.completedTodo : ''
+        }`}
+      >
         <RiTodoFill className={styles.todoIcon} />
         <div className={styles.todoText}>{todo.text}</div>
         <RiDeleteBin2Line
