@@ -58,9 +58,7 @@ function App() {
         deleteTodo={deleteTodoHandler}
         changeTodo={changeTodoHandler}
       />
-      {!!copmletedTodoVount.length && (
-        <h3>Готово {copmletedTodoVount} задач(а)</h3>
-      )}
+      {!!copmletedTodoVount && <h3>Done {copmletedTodoVount} todo</h3>}
     </div>
   );
 }
