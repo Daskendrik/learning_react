@@ -1,17 +1,24 @@
-import { RiTodoFill } from 'react-icons/ri';
+import { RiDeleteBin2Line, RiTodoFill } from 'react-icons/ri';
+import { FaCheck } from 'react-icons/fa';
 import styles from './Todo.module.css';
 
 const Todo = (props) => {
-  const { todo, deleteTodo, index } = props;
+  const { todo, deleteTodo, changeTodo } = props;
   return (
     <>
-      <div
-        className={styles.todo}
-        onDoubleClick={() => deleteTodo(index)}
-        index={index}
-      >
+      <div className={styles.todo}>
         <RiTodoFill className={styles.todoIcon} />
-        <div className={styles.todoText}>{todo}</div>
+        <div className={styles.todoText}>{todo.text}</div>
+        <RiDeleteBin2Line
+          className={styles.deleteIcon}
+          onClick={() => deleteTodo(todo.id)}
+        />
+        <FaCheck
+          className={styles.checkIcon}
+          onClick={() => {
+            changeTodo(todo.id);
+          }}
+        />
       </div>
     </>
   );
