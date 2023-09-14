@@ -29,30 +29,38 @@ function App() {
           : { ...todo };
       })
     );
-
-    // todos.map((todo) => {
-    //   if (todo.id === id) {
-    //     if (todo.isCompleted === false) {
-    //       todo.isCompleted = true;
-    //       SetTodosDone([...todosDone, todo]);
-    //     } else {
-    //       todo.isCompleted = false;
-    //       SetTodosDone([todosDone.filter((todo) => todo.id !== id)]);
-    //     }
-    //   }
-    // });
   };
+
+  const resetTodoHandler = () => {
+    SetTodos([]);
+  };
+
+  const deleteCompletedTodoHandler = () => {
+    SetTodos(todos.filter((todo) => !todo.isCompleted));
+  };
+
+  const copmletedTodoVount = todos.filter((todo) => todo.isCompleted).length;
+
   return (
     <div className="App">
       <h1>Todo App</h1>
       <TodoForm addTodo={addTodoHandler} />
-      <TodosAction />
+      {!!todos.length && (
+        <TodosAction
+          resetTodo={resetTodoHandler}
+          deleteCompletedTodo={deleteCompletedTodoHandler}
+          copmletedTodoExist={!!copmletedTodoVount}
+        />
+      )}
+
       <TodoList
         todos={todos}
         deleteTodo={deleteTodoHandler}
         changeTodo={changeTodoHandler}
       />
-      {/* {!!todosDone.length && <h3>Готово {todosDone.length} задач(а)</h3>} */}
+      {!!copmletedTodoVount.length && (
+        <h3>Готово {copmletedTodoVount} задач(а)</h3>
+      )}
     </div>
   );
 }
