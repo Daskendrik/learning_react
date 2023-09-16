@@ -1,9 +1,12 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import { useState } from 'react';
 import './App.css';
 import TodoForm from './Components/Todos/TodoForm';
 import TodoList from './Components/Todos/TodoList';
 import TodosAction from './Components/Todos/TodosAction';
+import Layaut from './Layout/Layaut';
+import Test from './Components/Test';
 
 function App() {
   const [todos, SetTodos] = useState([]);
@@ -59,6 +62,15 @@ function App() {
         changeTodo={changeTodoHandler}
       />
       {!!copmletedTodoVount && <h3>Done {copmletedTodoVount} todo</h3>}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layaut />}>
+            <Route index element={<h3>Ничего не выбрано</h3>} />
+            <Route path="test" element={<Test />} />
+            <Route path="*" element={<h3>Такого пункта неть</h3>} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
