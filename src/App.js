@@ -7,6 +7,8 @@ import TodoList from './Components/Todos/TodoList';
 import TodosAction from './Components/Todos/TodosAction';
 import Layaut from './Layout/Layaut';
 import Test from './Components/Test';
+import Courses from './Components/Courses';
+import SingleCourse from './Components/SingleCourse';
 
 function App() {
   const [todos, SetTodos] = useState([]);
@@ -68,6 +70,8 @@ function App() {
             <Route index element={<h3>Ничего не выбрано</h3>} />
             <Route path="test" element={<Test />} />
             <Route path="*" element={<h3>Такого пункта неть</h3>} />
+            <Route path="courses" element={<Courses />} />
+            <Route path="courses/:slug" element={<SingleCourse />} />
           </Route>
         </Routes>
       </BrowserRouter>

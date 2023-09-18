@@ -7,8 +7,9 @@ const Menu = () => {
       <NavLink to="." end>
         Начало
       </NavLink>
-      <NavLink to="/test">Тест</NavLink>
-      <NavLink to="/some">Что то</NavLink>
+      <NavLink to="test">Тест</NavLink>
+      <NavLink to="some">Что то</NavLink>
+      <NavLink to="courses">Курсы</NavLink>
     </>
   );
 };
