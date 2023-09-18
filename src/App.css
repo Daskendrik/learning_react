@@ -24,3 +24,8 @@ a {
   font-size: 20px;
   color: red;
 }
+
+.active {
+  color: yellow;
+  text-decoration: none;
+}
