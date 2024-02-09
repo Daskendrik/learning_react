@@ -9,6 +9,7 @@ import Layaut from './Layout/Layaut';
 import Test from './Components/Test';
 import Courses from './Components/Courses';
 import SingleCourse from './Components/SingleCourse';
+import FormReact from './Components/FormReact.tsx';
 
 function App() {
   const [todos, SetTodos] = useState([]);
@@ -72,6 +73,7 @@ function App() {
             <Route path="*" element={<h3>Такого пункта неть</h3>} />
             <Route path="courses" element={<Courses />} />
             <Route path="courses/:slug" element={<SingleCourse />} />
+            <Route path="reactform" element={<FormReact />} />
           </Route>
         </Routes>
       </BrowserRouter>
